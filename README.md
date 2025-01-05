@@ -26,18 +26,71 @@
     - O __Queue__ é uma classe do módulo __queue__ em Python, usada para implementar estruturas de fila. Filas são coleções ordenadas o primeiro elemento inserido é o primeiro a ser removido. Essa classe é requentemente utilizada em cenários de __multithreading__ para gerenciar dados compartilhados entre __threads__ de forma segura e eficiente.
 ---
 
-**Modulo_Threadds_04**
-banco_inseguro.py:
-- Neste exemplo existe conflito entre múltiplas Threads onde as operações de serviços "Transferência" ocorre de maneira simultânea, ocasionando erro de valores __("race conditions")__, pois as Threads compartilham o mesmo recurso (objeto).
+**Modulo_Threadds_04 & Modulo_Threadds_05**
+- __Compartilhamento de dados em múltiplas Threads.__
+    - __banco_inseguro.py__:
+        - Neste exemplo __existe conflito entre múltiplas Threads__ onde as operações de serviços ocorre de maneira simultânea, ocasionando erro de valores __("race conditions")__, pois as Threads compartilham o mesmo recurso (objeto).
 
-banco_seguro.py:
-- Neste exemplo foi eliminado o conflito de múltiplas Threads com o uso de Rlock(), função garantidora que apenas uma thread por vez execute um bloco específico de código, preservando a consistência do recurso ou objeto.
+    - __banco_seguro.py__:
+        - Neste exemplo foi __eliminado o conflito de múltiplas Threads__ com o uso de __RLock()__, função garantidora que apenas uma Thread por vez execute um bloco específico de código, preservando a consistência do recurso (objeto).
+
+    - __Lock()__ ou __RLock()__ em Python garante que apenas uma Thread por vez execute um bloco específico de código.
+        
+        Quando usar cada um?
+        Use __Lock__:
+        Quando o lock será adquirido e liberado apenas uma vez por Thread em cada ciclo.
+        Exemplo: __Aula_threads_Lock_01.py & Aula_threads_Lock_02.py__
+        
+        Use __RLock__:
+        Quando uma thread precisa adquirir o lock várias vezes.
+        Exemplo: __banco_seguro.py__
 ---
 
-**Modulo_Threadds_05**
+## Multiprocessamento
+- O __módulo multiprocessing__ no Python permite a criação e o gerenciamento de __processos paralelos__, aproveitando múltiplos núcleos de CPU para executar tarefas simultaneamente.
+
+- Diferença entre __"threading"__ e __"multiprocessing"__:
+    - __"threading"__: Usa threads, que compartilham o mesmo espaço de memória, mas são limitadas pelo Global Interpreter Lock (GIL), o que pode reduzir o desempenho em operações intensivas de CPU.
+
+    - __"multiprocessing"__: Usa processos, cada um com seu próprio espaço de memória, eliminando o GIL e permitindo melhor aproveitamento de CPUs multicore.
 ---
 
+**Modulo_02_Multiprocessamento_01**
 
+- __multiprocessing.current_process().name__: é usada para obter o nome do processo atual em execução.
+- __Process(target=???, args=(???,), name='???')__:
+    - __Thread()__:  classe do módulo __multiprocessing__ que permite criar e gerenciar execução paralela de código
+    - __target()__: define a função que será executada pela thread
+    - __args()__: argumentos passados em forma de tupla para função
+    - __name()__: define um nome para o processo
+- __.start()__: # Inicia o processo
+- __.join()__: # Aguarda o término do processo
+---
+
+**Modulo_02_Multiprocessamento_02**
+- __pool = multiprocessing.Pool()__: gerenciar tarefas para os processos disponíveis de forma eficiente permite executar tarefas em paralelo utilizando múltiplos processos, aproveitando os vários núcleos disponíveis no processador. Possibilitado ao programador manipular a quantidade de processos a ser executado. 
+- __pool.close()__: Fecha o pool para novas tarefas
+- __pool.join()__: Aguarda os processos finalizarem
+---
+
+**Modulo_02_Multiprocessamento_03**
+- __Compartilhamento de dados em múltiplas processos__
+    - O __método multiprocessing.Pipe()__ cria um canal de comunicação (pipe) __entre dois processos__ que pode ser usado para trocar dados. Esse método retorna um par de conexões (duas extremidades do pipe) que permitem que os processos se comuniquem entre si.
+---
+
+**Modulo_02_Multiprocessamento_04**
+- __Compartilhamento de dados em múltiplas processos__
+    - O __Queue é uma classe do módulo queue__ em Python, usada para implementar estruturas de fila. Filas são coleções ordenadas, onde o primeiro elemento inserido é o primeiro a ser removido. Essa classe é frequentemente utilizada em cenários de multithreading para gerenciar dados compartilhados entre processos.
+---
+
+**Modulo_02_Multiprocessamento_05**
+- __Compartilhamento de dados em múltiplas processos__
+    - O __método Value__ do módulo multiprocessing é usado para criar um valor compartilhado que pode ser acessado e modificado por diferentes processos.
+
+    - O __módulo ctypes__ do Python é uma biblioteca poderosa que permite interagir diretamente com bibliotecas compartilhadas escritas em linguagens como C ou C++, em resumo, ctypes permite definir e manipular estruturas em C ou C++.
+---
+
+**Modulo_02_Multiprocessamento_06**
 
 
 ## Async  e Await
