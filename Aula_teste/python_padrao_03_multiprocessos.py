@@ -37,5 +37,5 @@ if __name__ == '__main__':
 
 
 """
-Terminou em 1.30 segundos.
+Terminou em 4.17 segundos..
 """

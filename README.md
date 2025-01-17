@@ -5,6 +5,12 @@
 - Em Python, __threads__ são linhas de execução concorrentes em um mesmo processo. Elas são concorrentes no sentido de que executam simultaneamente. Isso pode ser útil para melhorar o desempenho de um programa, pois __permite que ele execute múltiplas tarefas ao mesmo tempo__.
 ---
 
+**Aula_teste**
+- Realização de teste utilizando diversos processos no mesmo programa:
+    - python_padrao_01.py
+    - python_padrao_02_thread.py
+    - python_padrao_03_multiprocessos.py
+
 **Modulo_Threadds_01**
 - Threads simples
     - __Thread(target=???, args=(???))__
@@ -56,6 +62,18 @@
 ---
 
 **Modulo_02_Multiprocessamento_01**
+- A diferença entre __Multiprocessing__ e __Threads__ em Python está relacionada à forma como eles utilizam recursos do sistema e ao tipo de paralelismo que proporcionam.
+
+__Threads__: Threads são unidades de execução mais leves que fazem parte de um único processo. Elas compartilham o mesmo espaço de memória do processo principal.
+
+__Multiprocessing__: Cada processo no multiprocessing tem sua própria instância do interpretador Python e não compartilha memória com outros processos.
+---
+
+**Modulo_02_Multiprocessamento_02**
+- Alternância de __Multiprocessing__ e __Threads__ em uma única linha.
+---
+
+**Modulo_02_Multiprocessamento_03**
 
 - __multiprocessing.current_process().name__: é usada para obter o nome do processo atual em execução.
 - __Process(target=???, args=(???,), name='???')__:
@@ -67,34 +85,61 @@
 - __.join()__: # Aguarda o término do processo
 ---
 
-**Modulo_02_Multiprocessamento_02**
+**Modulo_02_Multiprocessamento_04**
 - __pool = multiprocessing.Pool()__: gerenciar tarefas para os processos disponíveis de forma eficiente permite executar tarefas em paralelo utilizando múltiplos processos, aproveitando os vários núcleos disponíveis no processador. Possibilitado ao programador manipular a quantidade de processos a ser executado. 
 - __pool.close()__: Fecha o pool para novas tarefas
 - __pool.join()__: Aguarda os processos finalizarem
 ---
 
-**Modulo_02_Multiprocessamento_03**
+**Modulo_02_Multiprocessamento_05**
 - __Compartilhamento de dados em múltiplas processos__
     - O __método multiprocessing.Pipe()__ cria um canal de comunicação (pipe) __entre dois processos__ que pode ser usado para trocar dados. Esse método retorna um par de conexões (duas extremidades do pipe) que permitem que os processos se comuniquem entre si.
 ---
 
-**Modulo_02_Multiprocessamento_04**
+**Modulo_02_Multiprocessamento_06**
 - __Compartilhamento de dados em múltiplas processos__
     - O __Queue é uma classe do módulo queue__ em Python, usada para implementar estruturas de fila. Filas são coleções ordenadas, onde o primeiro elemento inserido é o primeiro a ser removido. Essa classe é frequentemente utilizada em cenários de multithreading para gerenciar dados compartilhados entre processos.
 ---
 
-**Modulo_02_Multiprocessamento_05**
+**Modulo_02_Multiprocessamento_07**
 - __Compartilhamento de dados em múltiplas processos__
     - O __método Value__ do módulo multiprocessing é usado para criar um valor compartilhado que pode ser acessado e modificado por diferentes processos.
 
     - O __módulo ctypes__ do Python é uma biblioteca poderosa que permite interagir diretamente com bibliotecas compartilhadas escritas em linguagens como C ou C++, em resumo, ctypes permite definir e manipular estruturas em C ou C++.
 ---
 
-**Modulo_02_Multiprocessamento_06**
+**Modulo_02_Multiprocessamento_08**
+- __Compartilhamento de dados em múltiplas processos__
+    - __Lock()__ ou __RLock()__ em Python garante que apenas um __multiprocessing__ por vez execute um bloco específico de código.
+            
+            Quando usar cada um?
+            Use __Lock__:
+            Quando o lock será adquirido e liberado apenas uma vez por Thread em cada ciclo.
+            
+            Use __RLock__:
+            Quando uma thread precisa adquirir o lock várias vezes.
+---
 
 
-## Async  e Await
+## Async e Await
 - Python: __"async"__ e __"await"__
 
-    -   Em Python, __"async"__ e __"await"__ são palavras-chave que trabalham juntas para habilitar a programação assíncrona. Isso significa que seu programa pode lidar com várias tarefas simultaneamente sem bloquear o __thread__ principal. Isso é particularmente útil para operações vinculadas a solicitações de rede ou acesso ao sistema de arquivos, onde você pode passar muito tempo aguardando.
+    -   Em Python, __"async"__ e __"await"__ são palavras-chave que trabalham juntas para habilitar a programação assíncrona (operações de leitura ou escrita em dispositivos IO -
+Input/Output). Isso significa que seu programa pode lidar com várias tarefas simultaneamente sem bloquear o __thread__ principal. Isso é particularmente útil para operações vinculadas a solicitações de rede ou acesso ao sistema de arquivos, onde você pode passar muito tempo aguardando.
 ---
+
+**Modulo_03_Async_01**
+- __assicrono_01__:
+    - __Função Síncrona__: Executa tarefas uma de cada vez, de forma sequencial. A próxima linha de código só é executada após a conclusão da linha anterior.
+    - __Função Assíncrona__: Definição: Permite a execução de várias tarefas de forma "concorrente", utilizando o conceito de event loop. O código não precisa esperar o término de uma tarefa para iniciar outra, podendo pausar e retomar conforme necessário.
+
+- __assicrono_02__:
+    - __async def soma_03__:
+        - __asyncio.new_event_loop()__: Criando loop de eventos (assíncrono)
+        - __.run_until_complete("FUNÇÃO")__: Executa o loop de eventos (assíncrono)
+        - __.close()__: Fechando o loop de eventos (assíncrono)
+        
+    - __async def soma_04__:
+        - __asyncio.run("FUNÇÃO")__: Execução de função assíncrona por completo (cria, executar, fechar)
+---
+

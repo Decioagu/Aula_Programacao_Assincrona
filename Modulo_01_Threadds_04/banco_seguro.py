@@ -5,7 +5,7 @@ from time import sleep
 from typing import List
 
 '''
-O uso de Lock() ou RLock() garante que apenas uma thread por vez execute um bloco 
+O uso de Lock() ou RLock() garante que apenas uma Thread por vez execute um bloco 
 específico de código, eliminando o problema de "race conditions" em compartilhamento
 do mesmo recursos ou objeto por diferentes Threads.
 

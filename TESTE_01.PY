@@ -1,7 +1,6 @@
-print("My", "name", "is", "Monty", "Python.", sep="-")
-print("My name is", end=" ")
-print("Monty Python.")
-print("My name is", end="###")
-print("Monty Python.")
-print("My", "name", "is", sep="_", end="*")
-print("Monty Python.")
+import sys
+
+print(sys.getsizeof(10))         # Inteiro
+print(sys.getsizeof(10.5))       # Float
+print(sys.getsizeof("Hello"))    # String
+print(sys.getsizeof(True))       # Booleano
