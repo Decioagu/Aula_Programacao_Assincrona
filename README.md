@@ -143,3 +143,12 @@ Input/Output). Isso significa que seu programa pode lidar com várias tarefas si
         - __asyncio.run("FUNÇÃO")__: Execução de função assíncrona por completo (cria, executar, fechar)
 ---
 
+**Modulo_03_Async_02**
+- __"async e await"__:
+    - O __"await"__ só pode ser usado dentro de funções definidas com __"async def"__.
+
+- __Await__ indica que a execução da função será suspensa até que a operação assíncrona que está sendo aguardada seja concluída. Durante esse tempo, o loop de eventos pode executar outras tarefas, permitindo que o programa utilize melhor os recursos.
+---
+
+**Modulo_03_Async_03**
+---
