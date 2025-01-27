@@ -26,6 +26,7 @@ em aplicativos mais complexos.
 # 4 assíncrono
 async def soma_04(a, b):
     return a + b
+
 # Execução da função assíncrona | (Cria, Executar, Fechar)
 resultado_04 = asyncio.run(soma_04(1,3))
 

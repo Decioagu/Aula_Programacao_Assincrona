@@ -10,7 +10,6 @@ def main():
     inicio = datetime.datetime.now()
 
     # el.run_until_complete(computar(inicio=1, fim=50_000_000))
-
     tarefa1 = el.create_task(computar(inicio=1, fim=10_000_000))
     tarefa2 = el.create_task(computar(inicio=10_000_001, fim=20_000_000))
     tarefa3 = el.create_task(computar(inicio=20_000_0001, fim=30_000_000))
@@ -37,4 +36,5 @@ if __name__ == '__main__':
 """
 Forma 1: Terminou em 13.29 segundos.
 Forma 2: Terminou em 4.87 segundos.
+Forma 3: Terminou em .87 segundos.
 """

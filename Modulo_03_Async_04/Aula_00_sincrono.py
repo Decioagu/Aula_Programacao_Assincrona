@@ -30,3 +30,5 @@ cliente = BobEspoja()
 cliente.pedido()
 print()
 print(f'Tudo pronto, pedido finalizado em {(time() - start_time):.0f} segundos')
+
+# Tudo pronto, pedido finalizado em 28 segundos

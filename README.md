@@ -120,7 +120,6 @@ __Multiprocessing__: Cada processo no multiprocessing tem sua própria instânci
             Quando uma thread precisa adquirir o lock várias vezes.
 ---
 
-
 ## Async e Await
 - Python: __"async"__ e __"await"__
 
@@ -151,4 +150,27 @@ Input/Output). Isso significa que seu programa pode lidar com várias tarefas si
 ---
 
 **Modulo_03_Async_03**
+- Em asyncio, .create_task() e asyncio.gather() são usados para lidar com grupamento de tarefas assíncronas.
+    - asyncio.create_task(): Criação de tarefas (Agendamento)
+    - asyncio.gather(): Agrupar tarefas agendadas (Execução)
+---
+
+**Modulo_03_Async_04**
+- __Aula_03_assincrono.py__
+    - Retorna o loop de eventos atualmente em execução:
+        - __asyncio.get_event_loop()__: funciona tanto dentro quanto fora de corrotinas 
+        e tenta obter o loop de eventos padrão, criando um se necessário.
+        - __asyncio.get_running_loop()__: é mais específico e só funciona se um loop 
+        de eventos já estiver ativo. É útil para evitar a criação acidental de 
+        loops fora do contexto correto.
+---
+
+**Modulo_03_Async_05**
+- O __módulo aiofiles__ é usado em Python para realizar operações de entrada e saída (I/O) assíncronas em arquivos texto, permitindo que você leia, escreva, ou manipule arquivos sem bloquear o evento principal da aplicação. Usar o __aiofiles__ para ler e escrever em arquivos texto de forma assíncrona.
+---
+
+**Modulo_03_Async_06**
+EO __módulo aiohttp__ é uma ferramenta poderosa e popular para realizar operações HTTP de forma assíncrona. Isso significa que você pode fazer múltiplas requisições HTTP simultaneamente sem bloquear a execução do seu programa.
+
+O __módulo bs4__ (Beautiful Soup 4) é uma ferramenta poderosa em Python, especialmente utilizada para analisar documentos HTML e XML. Em termos mais simples, ela permite que você "navegue" por uma página web como se fosse uma árvore, encontrando elementos específicos como títulos, parágrafos, links, imagens, etc.
 ---
